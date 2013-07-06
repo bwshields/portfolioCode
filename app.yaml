@@ -1,0 +1,15 @@
+application: dev-bds2shields
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+
+handlers:  
+- url: /.*
+  script: index.app

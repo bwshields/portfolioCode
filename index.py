@@ -9,8 +9,11 @@ env = Environment(loader = PackageLoader('index', 'templates'))
 template = env.get_template('base.html')
                                
 class MainPage(webapp2.RequestHandler):
+                               
     def get(self):
-      self.response.out.write(template.render())
+                               temp = env.get_template('index.html')
+    	#self.response.headers['Content-Type'] = 'text/plain'
+    	self.response.out.write(temp.render())
 
 app = webapp2.WSGIApplication(routes=[ 
     ( r'/', MainPage ),
